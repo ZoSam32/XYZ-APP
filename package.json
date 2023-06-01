@@ -1,0 +1,22 @@
+{
+  "name": "xyz-app",
+  "version": "1.0.0",
+  "description": "Sample app for the XYZ POC",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ZoSam32/XYZ-APP.git"
+  },
+  "author": "Lorenzo Samaniego Jr.",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ZoSam32/XYZ-APP/issues"
+  },
+  "homepage": "https://github.com/ZoSam32/XYZ-APP#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}

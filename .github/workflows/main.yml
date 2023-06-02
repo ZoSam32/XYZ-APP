@@ -51,7 +51,7 @@ jobs:
         with:
           service_principal: ${{ secrets.service_principal }}
           service_principal_password: ${{ secrets.service_principal_password }}
-          tenant: acr-sample
+          tenant: ${{ secrets.az_tenant_id }}
           registry: xzyappsample
           repository: sample/xyzsample
           image: xyzsample

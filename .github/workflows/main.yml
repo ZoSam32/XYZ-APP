@@ -46,7 +46,7 @@ jobs:
           password: ${{ secrets.ACR_TOKEN }}
       - run: |
           docker build -t xyzammsample.azurecr.io/sample/xyzsample:${{ github.sha }} .
-          docker push xyzammsample.azurecr.io/sample/xyzsample:${{ github.sha }} .
+          docker push xyzammsample.azurecr.io/sample/xyzsample:${{ github.sha }}
       # - run: |
       #     az acr build --image sample/xyzsample:v2 --registry xyzappsample.azurecr.io --file Dockerfile .
       # - name: ACR Build and Push

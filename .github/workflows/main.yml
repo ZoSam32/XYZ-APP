@@ -44,5 +44,15 @@ jobs:
           login-server: xyzappsample.azurecr.io
           username: ${{ secrets.ACR_USER }}
           password: ${{ secrets.ACR_TOKEN }}
-      - run: |
-          az acr build --image sample/xyzsample:v2 --registry xyzappsample.azurecr.io --file Dockerfile .
+      # - run: |
+      #     az acr build --image sample/xyzsample:v2 --registry xyzappsample.azurecr.io --file Dockerfile .
+      - name: ACR Build and Push
+        uses: azure/acr-build@v1
+        with:
+          service_principal: ${{ secrets.service_principal }
+          service_principal_password: ${{ secrets.service_principal_password }}
+          tenant: xyzappsample.azurecr.io
+          registry: xzysample
+          repository: sample/xyzsample
+          image: xyzsample
+          

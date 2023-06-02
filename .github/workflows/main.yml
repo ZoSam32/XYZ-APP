@@ -49,10 +49,10 @@ jobs:
       - name: ACR Build and Push
         uses: azure/acr-build@v1
         with:
-          service_principal: ${{ secrets.service_principal }
+          service_principal: ${{ secrets.service_principal }}
           service_principal_password: ${{ secrets.service_principal_password }}
           tenant: xyzappsample.azurecr.io
           registry: xzysample
           repository: sample/xyzsample
           image: xyzsample
-          
+

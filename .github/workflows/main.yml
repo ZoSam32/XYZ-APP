@@ -37,3 +37,9 @@ on:
       - run: npm ci
       - run: npm run build --if-present
       - run: npm test
+
+      - uses: azure/docker-login@v1
+        with:
+          login-server: xyzappsample.azurecr.io
+          username: ${{ secrets.ACR_USER }}
+          password: ${{ secrets.ACR_TOKEN }}

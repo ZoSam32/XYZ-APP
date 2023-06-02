@@ -7,6 +7,6 @@ COPY . .
 # Install pre req
 RUN npm install express
 # Instructions to run app in container
-CMD ["node", "src/index.js"]
+CMD ["node", "src/server.js"]
 # The published container network port
 EXPOSE 3001

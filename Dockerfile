@@ -1,5 +1,5 @@
 # Use the base node 18.6.0 image
-FROM node:18.6.0
+FROM node:18.16
 # Set the local working dir 
 WORKDIR /
 # Copy app files 

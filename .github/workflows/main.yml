@@ -6,7 +6,7 @@ on:
       - main
       - 4-add-unit-test-to-sample-app
 
-# jobs:
+jobs:
 #   security:
 #     runs-on: ubuntu-latest
 #     steps:

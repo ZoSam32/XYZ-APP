@@ -51,7 +51,7 @@ jobs:
         with:
           service_principal: ${{ secrets.service_principal }}
           service_principal_password: ${{ secrets.service_principal_password }}
-          tenant: ${{ AZURE_SUB_ID }}
+          tenant: ${{ secrets.AZURE_SUB_ID }}
           registry: xzyappsample
           repository: sample/xyzsample
           image: xyzsample

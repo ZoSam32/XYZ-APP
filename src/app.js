@@ -7,4 +7,9 @@ app.get('/', (req, res) => {
     res.json({'message':'Automate all the things!','timestamp':`${Date.now()}`})
 })
 
+app.get('/live', (req, res) => {
+
+    res.send("Live probe check passed")
+})
+
 module.exports = app

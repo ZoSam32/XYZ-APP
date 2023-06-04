@@ -5,6 +5,7 @@ on:
     branches:
       - main
       - 4-add-unit-test-to-sample-app
+      - feature/*
 
 jobs:
 #   security:

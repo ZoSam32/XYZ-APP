@@ -68,7 +68,7 @@ jobs:
           service_principal_password: ${{ secrets.az_service_principal_password }}
           tenant: ${{ secrets.az_tenant_id }}
           registry: xyzappsample
-          repository: sample/xyzsample
+          repository: sample
           image: xyzsample
           branch: master
           tag: ${{ github.sha}}

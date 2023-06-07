@@ -60,4 +60,39 @@ jobs:
       #     registry: xyzappsample.azurecr.io
       #     repository: sample/xyzsample
       #     image: xyzsample
+      - name: ACR Build
+        id: build-push-acr
+        uses: azure/acr-build@1
+        with:
+          service_principal: ${{ secrets.az_service_principal }}
+          service_principal_password: ${{ secrets.az_service_principal_password }}
+          tenant: ${{ secrets.az_tenant_id }}
+          registry: xyzappsample
+          repository: sample/xyzsample
+          image: xyzsample
+          branch: master
+          tag: ${{ github.sha}}
+      - name: Azure Login
+        id: login
+        uses: azure/login@v1.4.3
+        with:
+          creds: ${{ secrets.az_credentials }}
+      - name: Set AKS Context
+        id: set-context
+        uses: azure/aks-set-context@v3
+        with:
+          resource-group: rg-xyz-poc-eus-xyz_app
+          cluster-name: aks-xyz-poc-eus-xyz_app
+      - name: Setup kubectl
+        id: install-kubectl
+        uses: azure/setup-kubectl@v3
+      - name: Deploy to AKS
+        id: deploy-aks
+        uses: azure/k8s-deploy@v4
+        with:
+          namespaces: 'xyz-app'
+          manifests: |
+            deploy.yaml
+          images: 'xyzappsample.azurecr.io/sample/xyzsample:${{ github.sha }}'
+          pull-images: false
 

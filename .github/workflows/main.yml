@@ -1,6 +1,6 @@
 name: CI and Image Push
 
-on:[ push, workflow_dispatch ]
+on: [push, workflow_dispatch]
   # push:
   #   branches:
   #     - main

@@ -76,6 +76,10 @@ jobs:
           image: xyzsample
           branch: main
           tag: ${{ github.sha}}
+  deploy:
+    needs: build
+    runs-on: unbuntu-latest
+    steps:
       - name: Azure Login
         id: login
         uses: azure/login@v1.4.3

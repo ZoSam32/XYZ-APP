@@ -85,7 +85,7 @@ jobs:
         id: set-context
         uses: azure/aks-set-context@v3
         with:
-          resource-group: 'rg-xyz-poc-eus-xyz_app'
+          resource-group: 'rg-poc-eus-xyz_app'
           cluster-name: 'aks-xyz-poc-eus-xyz_app'
       - name: Setup kubectl
         id: install-kubectl

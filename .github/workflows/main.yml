@@ -73,7 +73,7 @@ jobs:
           registry: xyzappsample
           repository: sample
           image: xyzsample
-          branch: master
+          branch: main
           tag: ${{ github.sha}}
       - name: Azure Login
         id: login

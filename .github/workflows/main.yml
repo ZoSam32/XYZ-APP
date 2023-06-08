@@ -93,9 +93,9 @@ jobs:
         id: deploy-aks
         uses: azure/k8s-deploy@v4
         with:
-          namespaces: 'xyz-app'
+          namespace: 'xyz-app'
           manifests: |
-            deploy.yaml --namespace=xyz-app
+            deploy.yaml
           images: 'xyzappsample.azurecr.io/sample/xyzsample:${{ github.sha }}'
           pull-images: false
 

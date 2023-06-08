@@ -9,7 +9,7 @@ app.get('/', (req, res) => {
 
 app.get('/live', (req, res) => {
 
-    res.send("Live probe check passed. Hi Lil Lorenzo")
+    res.send("Live probe check passed. Hi Lil Lorenzo & Leonardo")
 })
 
 module.exports = app

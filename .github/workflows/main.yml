@@ -95,7 +95,7 @@ jobs:
         with:
           namespaces: 'xyz-app'
           manifests: |
-            deploy.yaml
+            deploy.yaml --namespace=xyz-app
           images: 'xyzappsample.azurecr.io/sample/xyzsample:${{ github.sha }}'
           pull-images: false
 

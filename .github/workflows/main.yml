@@ -78,7 +78,7 @@ jobs:
           tag: ${{ github.sha}}
   deploy:
     needs: build
-    runs-on: unbuntu-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Azure Login
         id: login

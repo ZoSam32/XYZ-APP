@@ -1,11 +1,11 @@
 name: CI and Image Push
 
-on:
-  push:
-    branches:
-      - main
-      - 4-add-unit-test-to-sample-app
-      - feature/*
+on:[ push, workflow_dispatch ]
+  # push:
+  #   branches:
+  #     - main
+  #     - 4-add-unit-test-to-sample-app
+  #     - feature/*
 
 jobs:
   security:

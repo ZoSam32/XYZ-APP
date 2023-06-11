@@ -5,13 +5,9 @@ on:
   push:
     branches:
       - main
-    
-  # [push, workflow_dispatch]
-  # push:
-  #   branches:
-  #     - main
-  #     - 4-add-unit-test-to-sample-app
-  #     - feature/*
+  pull_request:
+    branches:
+      - main
 
 jobs:
   security:
@@ -84,6 +80,7 @@ jobs:
           tag: ${{ github.sha}}
   deploy:
     needs: build
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3

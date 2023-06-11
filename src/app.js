@@ -13,7 +13,7 @@ app.get('/live', (req, res) => {
 })
 
 app.get('/ready', (req, res) => {
-    res.send("Readiness probe check passed. Send live traffic to instance..")
+    res.send("Readiness probe check passed. Send live traffic to instance")
 })
 
 module.exports = app

@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - feature/*
+      - main
   pull_request:
     branches:
       - main
@@ -52,7 +53,7 @@ jobs:
           tag: ${{ github.sha}}
   deploy:
     needs: build
-    if: github.event.pull_request.base.ref == 'main'
+    # if: github.event.pull_request.base.ref == 'main'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3

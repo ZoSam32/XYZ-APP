@@ -82,4 +82,6 @@ jobs:
           pull-images: false
       - run: |
           kubectl get svc -n xyz-app
+          kubectl get svc -n xyz-app --output jsonpath="{.items[0].status.loadBalancer.ingress[0].ip}"
+
 

@@ -29,43 +29,15 @@ jobs:
   build:
     needs: security
     runs-on: ubuntu-latest
-    # strategy:
-    #   matrix:
-    #     node-version: [18.x]
     steps:
       - uses: actions/checkout@v3
       - name: Node Test and Build
         uses: actions/setup-node@v3
         with:
-          # node-version: ${{ matrix.node-version}}
           node-version: 18.x
       - run: npm ci
       - run: npm run build --if-present
       - run: npm test
-
-      # - name: ACR Login
-      #   uses: azure/docker-login@v1
-      #   with:
-      #     login-server: xyzappsample.azurecr.io
-      #     username: ${{ secrets.ACR_USER }}
-      #     password: ${{ secrets.ACR_TOKEN }}
-      # - name: Docker Image Build and Push
-      #   run: |
-      #     docker build -t 'xyzappsample.azurecr.io/sample/xyzsample:${{ github.sha}}' .
-      #     docker push 'xyzappsample.azurecr.io/sample/xyzsample:${{ github.sha }}'
-
-          
-      # - run: |
-      #     az acr build --image sample/xyzsample:v2 --registry xyzappsample.azurecr.io --file Dockerfile .
-      # - name: ACR Build and Push
-      #   uses: azure/acr-build@v1
-      #   with:
-      #     service_principal: ${{ secrets.service_principal }}
-      #     service_principal_password: ${{ secrets.service_principal_password }}
-      #     tenant: ${{ secrets.az_tenant_id }}
-      #     registry: xyzappsample.azurecr.io
-      #     repository: sample/xyzsample
-      #     image: xyzsample
       - name: ACR Build
         id: build-push-acr
         uses: azure/acr-build@v1

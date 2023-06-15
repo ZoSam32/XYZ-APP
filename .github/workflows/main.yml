@@ -107,4 +107,6 @@ jobs:
             deploy.yaml
           images: 'xyzappsample.azurecr.io/sample/xyzsample:${{ github.sha }}'
           pull-images: false
+      - run: |
+          kubectl get svc -n xyz-app
 

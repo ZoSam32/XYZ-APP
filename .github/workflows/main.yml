@@ -32,14 +32,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Node Test and Build
+      - name: Node setup
         uses: actions/setup-node@v3
         with:
           node-version: 18.x
       - run: npm ci
-      - run: npm run build --if-present
-      - run: npm test
-      - name: ACR Build
+      - name: App build
+        run: npm run build --if-present
+      - name: Unit test
+        run: npm test
+      - name: Image Build
         id: build-push-acr
         uses: azure/acr-build@v1
         with:

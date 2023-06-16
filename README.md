@@ -54,3 +54,20 @@ Ran all test suites.
 ```
 ### Security Testing
 The solution leverages the Snyk platform for Software Composition Analysis to validate open source components for vulnerabilities. Snyk SCA can be ran locally and is executed within the GitHub Action workflow `Build and Deploy`.
+
+To execute Snyk SCA locally, install the CLI from [here](https://docs.snyk.io/snyk-cli/install-the-snyk-cli) and run `snyk test` from the root of the repo. A sample output is listed below. 
+```
+➜  XYZ-APP git:(main) ✗ snyk test
+
+Testing /Users/lorenzo/labs/github/XYZ-APP...
+
+Organization:      fairway-independent-mortgage-corporation
+Package manager:   npm
+Target file:       package-lock.json
+Project name:      xyz-app
+Open source:       no
+Project path:      /Users/lorenzo/labs/github/XYZ-APP
+Licenses:          enabled
+
+✔ Tested 58 dependencies for known issues, no vulnerable paths found.
+```

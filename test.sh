@@ -4,11 +4,11 @@ SAMPLE=`kubectl get svc -n xyz-app --output jsonpath="{.items[0].status.loadBala
 
 sleep 10
 
-STATUS=`curl --silent --head $SAMPLE/readyyy | head -1 | cut -f 2 -d' '`
+STATUS=`curl --silent --head $SAMPLE/ready | head -1 | cut -f 2 -d' '`
 
 if [ "$STATUS" != "200" ] 
 then
-    echo "FAILURE, instance not ready"
+    echo "FAILURE. Readiness probes having issues."
     exit 1
 else
     echo "SUCCESS"

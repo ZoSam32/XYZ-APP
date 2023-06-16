@@ -81,15 +81,6 @@ jobs:
           images: 'xyzappsample.azurecr.io/sample/xyzsample:${{ github.sha }}'
           pull-images: false
       - run: |
-          kubectl get svc -n xyz-app
-          kubectl get svc -n xyz-app --output jsonpath="{.items[0].status.loadBalancer.ingress[0].ip}"
-          SAMPLE=`kubectl get svc -n xyz-app --output jsonpath="{.items[0].status.loadBalancer.ingress[0].ip}"`
-          RESPONSE=`curl $SAMPLE/live`
-          if [ $RESPONSE!="200" ] 
-          then
-              echo "FAILURE"
-          else
-              echo "SUCCESS"
-          fi
+          bash test.sh
 
 

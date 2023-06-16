@@ -71,3 +71,8 @@ Licenses:          enabled
 
 ✔ Tested 58 dependencies for known issues, no vulnerable paths found.
 ```
+## Deployment
+
+The application leverages Kubernetes to facilitate deployment via a Deloyment. The deployment manifest contents are within `deploy.yaml`. The deployment is further orchestrated within the GitHub Action workflow `Build and Deploy`. 
+
+The deployment is executed within the worklow via pull request to `main`. It is validated by successfully calling the readiness probe at `/ready`. If any of Testing or Deployment validations fail, the workflow will fail and stop. 

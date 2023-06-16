@@ -11,3 +11,25 @@ describe("Test the root path", () => {
         })
     })
 })
+
+describe("Test the liveness probe", () => {
+    test("It should respond the GET method", done => {
+        request(app)
+        .get('/live')
+        .then(response => {
+            expect(response.statusCode).toBe(200)
+            done()
+        })
+    })
+})
+
+describe("Test the readiness probe", () => {
+    test("It should respond the GET method", done => {
+        request(app)
+        .get('/ready')
+        .then(response => {
+            expect(response.statusCode).toBe(200)
+            done()
+        })
+    })
+})

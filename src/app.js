@@ -9,7 +9,7 @@ app.get('/', (req, res) => {
 
 app.get('/live', (req, res) => {
 
-    res.send("Live probe check passed. Hi Lil Lorenzo & Leonardo")
+    res.send("Live probe check passed. Hi Liatrio, x2")
 })
 
 app.get('/ready', (req, res) => {

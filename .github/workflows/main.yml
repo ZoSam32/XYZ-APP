@@ -1,4 +1,4 @@
-name: CI and Image Push
+name: Build & Deploy
 
 on: 
   push:

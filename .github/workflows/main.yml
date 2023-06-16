@@ -80,7 +80,8 @@ jobs:
             deploy.yaml
           images: 'xyzappsample.azurecr.io/sample/xyzsample:${{ github.sha }}'
           pull-images: false
-      - run: |
+      - name: Deploy Smoke Test
+        run: |
           bash test.sh
 
 

@@ -52,3 +52,5 @@ Snapshots:   0 total
 Time:        0.493 s, estimated 6 s
 Ran all test suites.
 ```
+### Security Testing
+The solution leverages the Snyk platform for Software Composition Analysis to validate open source components for vulnerabilities. Snyk SCA can be ran locally and is executed within the GitHub Action workflow `Build and Deploy`.
